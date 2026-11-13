@@ -1,25 +1,24 @@
-import { useContext } from "react";
-import { UnitsContext } from "../context/UnitsContext";
+import { useUnits } from "../context/UnitsContext.jsx";
 
 function UnitsToggle() {
-  const {units,setUnits} = useContext(UnitsContext);
+  const { units, setUnits } = useUnits();
 
   return (
     <div className="units-toggle">
-      <button 
-      type="button" 
-      className={units === "F" ? "units-on" :""}
-      onClick ={() => setUnits("F")}
+      <button
+        type="button"
+        className={units === "F" ? "units-on" : ""}
+        onClick={() => setUnits("F")}
       >
         °F
       </button>
-      <button 
-      type="button"
-      className={units === "C" ? "units-on" : ""}
-      onClick={() => setUnits("C")}
+      <button
+        type="button"
+        className={units === "C" ? "units-on" : ""}
+        onClick={() => setUnits("C")}
       >
         °C
-        </button>
+      </button>
     </div>
   );
 }
